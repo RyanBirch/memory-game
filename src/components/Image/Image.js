@@ -19,7 +19,7 @@ class Image extends React.Component {
   render() {
     return (
       <div className="image" onClick={this.handleClick}>
-        <p>Image</p>
+        <p>Image {this.props.id}</p>
 
       </div>
     )
