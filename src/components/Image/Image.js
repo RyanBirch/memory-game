@@ -9,7 +9,7 @@ class Image extends React.Component {
 
   handleClick = () => {
     if (this.state.clicked) {
-      console.log('You lose')
+      this.props.lossStatus()
     } else {
       this.setState({ clicked: !this.state.clicked })
       this.props.incrementScore()
