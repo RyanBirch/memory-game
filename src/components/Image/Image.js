@@ -20,10 +20,11 @@ class Image extends React.Component {
 
   render() {
     return (
-      <div className="image" onClick={this.handleClick}>
-        <p>Image {this.props.id}</p>
-
-      </div>
+      // <div className="image" onClick={this.handleClick}>
+      //   {/* <p>Image {this.props.id}</p> */}
+      //   <img src={this.props.imgSrc} alt='sponge' width="25%" />
+      // </div>
+      <img src={this.props.imgSrc} className="image" alt='sponge' width="25%" height="175em" onClick={this.handleClick} />
     )
   }
 }

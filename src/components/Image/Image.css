@@ -1,5 +1,7 @@
 .image {
-  background-color: #41b3ff;
-  color: #fff;
   cursor: pointer;
+}
+
+.img-wrapper {
+  display: inline-block;
 }
