@@ -12,6 +12,7 @@ class Container extends React.Component {
     this.setState({ 
       score: this.state.score + 1,
     }, () => {
+      // if they haven't won yet, shuffle the images
       if (!this.checkWin()) {
         this.forceUpdate()
       }
@@ -26,7 +27,10 @@ class Container extends React.Component {
   }
 
   lossStatus = () => {
-    this.setState({ winStatus: 'You lose' })
+    this.setState({ 
+      winStatus: 'You lose',
+      score: 0
+    })
   }
 
   shuffle = arr => {
@@ -35,38 +39,20 @@ class Container extends React.Component {
 
   render() {
     let images = [
-      <Image 
-        id='1' 
-        incrementScore={this.incrementScore}
-        lossStatus={this.lossStatus} 
-      />,
-      <Image 
-        id='2' 
-        incrementScore={this.incrementScore}
-        lossStatus={this.lossStatus} 
-      />,
-      <Image 
-        id='3' 
-        incrementScore={this.incrementScore}
-        lossStatus={this.lossStatus} 
-      />,
-      <Image 
-        id='4' 
-        incrementScore={this.incrementScore}
-        lossStatus={this.lossStatus} 
-      />,
-      <Image 
-        id='5' 
-        incrementScore={this.incrementScore}
-        lossStatus={this.lossStatus} 
-      />
+      <Image key='1' id='1' incrementScore={this.incrementScore} lossStatus={this.lossStatus} />,
+      <Image key='2' id='2' incrementScore={this.incrementScore} lossStatus={this.lossStatus} />,
+      <Image key='3' id='3' incrementScore={this.incrementScore} lossStatus={this.lossStatus} />,
+      <Image key='4' id='4' incrementScore={this.incrementScore} lossStatus={this.lossStatus} />,
+      <Image key='5' id='5' incrementScore={this.incrementScore} lossStatus={this.lossStatus} />
     ]
 
     this.shuffle(images)
+
     return (
       <div>
         <h1>Score: {this.state.score}</h1>
         <h2>{this.state.winStatus}</h2>
+        {/* render images array */}
         {images}
       </div>
     )

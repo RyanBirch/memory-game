@@ -8,9 +8,11 @@ class Image extends React.Component {
   }
 
   handleClick = () => {
+    // if the image has already been clicked, you lose
     if (this.state.clicked) {
       this.props.lossStatus()
     } else {
+      // mark component as clicked and increment score
       this.setState({ clicked: !this.state.clicked })
       this.props.incrementScore()
     }
