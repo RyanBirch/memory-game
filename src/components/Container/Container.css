@@ -1,0 +1,28 @@
+.scores {
+  /* display: inline-block; */
+  width: 100%;
+}
+
+.scores h1 {
+  display: inline-block;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.play-again {
+  background-color: #188fff;
+  color: #fff;
+  font-size: 1.5em;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.play-again:hover {
+  background-color: #1371ff;
+}
+
+.hidden {
+  display: none;
+}
