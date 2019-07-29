@@ -8,7 +8,21 @@ class Container extends React.Component {
     score: 0,
     highScore: 0,
     winStatus: '',
-    gameOver: false
+    gameOver: false,
+    images: [
+      { clicked: false },
+      { clicked: false },
+      { clicked: false },
+      { clicked: false },
+      { clicked: false },
+      { clicked: false },
+      { clicked: false },
+      { clicked: false },
+      { clicked: false },
+      { clicked: false },
+      { clicked: false },
+      { clicked: false }
+    ]
   }
 
   incrementScore = () => {
@@ -55,31 +69,58 @@ class Container extends React.Component {
   }
 
   handleGameOver = () => {
+    let newImages = this.state.images
+    newImages.map(image => {
+      image.clicked = false
+      return image
+    })
     this.setState({
       score: 0,
       winStatus: '',
-      gameOver: false
+      gameOver: false,
+      images: newImages
     })
   }
 
   shuffle = arr => {
     arr.sort(() => Math.random() - 0.5)
+    return arr
+  }
+
+  handleClick = (id) => {
+
+    // if it has already been clicked, they lose
+
+    if (this.state.images[id].clicked) {
+      this.loss()
+    } else {
+      // mark image as clicked and increment score
+      // let newImages = this.state.images.map((image, i) => {
+      //   if (id == i) image.clicked = false
+      //   return image
+      // })
+      let newImages = this.state.images
+      newImages[id].clicked = true
+      this.setState({ images: newImages }, () => {
+        this.incrementScore()
+      })
+    }
   }
 
   render() {
     let images = [
-      <Image key='1' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb1.jpg')} />,
-      <Image key='2' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb2.jpeg')}/>,
-      <Image key='3' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb3.jpg')} />,
-      <Image key='4' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb4.jpg')} />,
-      <Image key='5' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb5.jpg')} />,
-      <Image key='6' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb6.jpg')} />,
-      <Image key='7' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb7.jpg')}/>,
-      <Image key='8' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb8.jpg')} />,
-      <Image key='9' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb9.png')} />,
-      <Image key='10' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb10.webp')} />,
-      <Image key='11' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb11.jpg')} />,
-      <Image key='12' incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb12.jpg')} />
+      <Image key='1' id='1' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb1.jpg')} />,
+      <Image key='2' id='2' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb2.jpeg')}/>,
+      <Image key='3' id='3' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb3.jpg')} />,
+      <Image key='4' id='4' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb4.jpg')} />,
+      <Image key='5' id='5' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb5.jpg')} />,
+      <Image key='6' id='6' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb6.jpg')} />,
+      <Image key='7' id='7' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb7.jpg')}/>,
+      <Image key='8' id='8' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb8.jpg')} />,
+      <Image key='9' id='9' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb9.png')} />,
+      <Image key='10' id='10' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb10.webp')} />,
+      <Image key='11' id='11' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb11.jpg')} />,
+      <Image key='12' id='12' handleClick={this.handleClick} incrementScore={this.incrementScore} loss={this.loss} imgSrc={require('./images/sb12.jpg')} />
     ]
 
     this.shuffle(images)
@@ -93,7 +134,14 @@ class Container extends React.Component {
         <h2>{this.state.winStatus}</h2>
         <button className={this.state.gameOver ? "play-again" : "hidden"} onClick={this.handleGameOver}>Play again?</button>
         <div className="img-wrapper">
-          {images.map(item => item)}
+          {/* {images.map(item => item)}
+          {
+            this.shuffle(this.state.images).map(item => {
+              console.log(item.id, item.imgSrc)
+              return <Image key={item.id} incrementScore={this.incrementScore} loss={this.loss} imgSrc={item.imgSrc} />
+            })
+          } */}
+          {images}
         </div>
       </div>
     )
