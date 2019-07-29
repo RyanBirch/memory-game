@@ -1,9 +1,8 @@
 .scores {
-  /* display: inline-block; */
   width: 100%;
 }
 
-.scores h1 {
+.scores h1, h2 {
   display: inline-block;
   margin-left: 1em;
   margin-right: 1em;
