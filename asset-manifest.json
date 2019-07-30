@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/react-memory-game/static/css/main.8bbfe71e.chunk.css",
+    "main.js": "/react-memory-game/static/js/main.1fa162ea.chunk.js",
+    "main.js.map": "/react-memory-game/static/js/main.1fa162ea.chunk.js.map",
+    "runtime~main.js": "/react-memory-game/static/js/runtime~main.83a7a993.js",
+    "runtime~main.js.map": "/react-memory-game/static/js/runtime~main.83a7a993.js.map",
+    "static/js/2.d6a534e5.chunk.js": "/react-memory-game/static/js/2.d6a534e5.chunk.js",
+    "static/js/2.d6a534e5.chunk.js.map": "/react-memory-game/static/js/2.d6a534e5.chunk.js.map",
+    "index.html": "/react-memory-game/index.html",
+    "precache-manifest.6f0ee943d0344827d31136199ecb6941.js": "/react-memory-game/precache-manifest.6f0ee943d0344827d31136199ecb6941.js",
+    "service-worker.js": "/react-memory-game/service-worker.js",
+    "static/css/main.8bbfe71e.chunk.css.map": "/react-memory-game/static/css/main.8bbfe71e.chunk.css.map",
+    "static/media/sb1.jpg": "/react-memory-game/static/media/sb1.9a26e562.jpg",
+    "static/media/sb10.webp": "/react-memory-game/static/media/sb10.905fd817.webp",
+    "static/media/sb11.jpg": "/react-memory-game/static/media/sb11.33be73d0.jpg",
+    "static/media/sb12.jpg": "/react-memory-game/static/media/sb12.333890fe.jpg",
+    "static/media/sb3.jpg": "/react-memory-game/static/media/sb3.b319998a.jpg",
+    "static/media/sb4.jpg": "/react-memory-game/static/media/sb4.b40219b0.jpg",
+    "static/media/sb6.jpg": "/react-memory-game/static/media/sb6.c9d3c3ee.jpg",
+    "static/media/sb7.jpg": "/react-memory-game/static/media/sb7.eabf8bfc.jpg",
+    "static/media/sb8.jpg": "/react-memory-game/static/media/sb8.beed1430.jpg",
+    "static/media/sb9.png": "/react-memory-game/static/media/sb9.496162e7.png"
+  }
+}
