@@ -9,5 +9,14 @@ This is a memory game built using ReactJS. Try to click every image without clic
 
 --- 
 
+## Installation
+1. Make sure you have Node installed on your local machine
+2. Clone this repository to your computer
+3. cd into the project folder
+4. run 'npm install' to install dependencies
+5. run 'npm start' to start the development server
+
+---
+
 ## Demo 
-See the app here: <a href="#">Memory Game</a>
+See the app here: <a href="https://ryanbirch.github.io/react-memory-game/">Memory Game</a>

@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.scores h1, h2 {
+.scores * {
   display: inline-block;
   margin-left: 1em;
   margin-right: 1em;
